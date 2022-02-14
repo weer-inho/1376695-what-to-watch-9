@@ -1,4 +1,4 @@
-function WelcomeScreen():JSX.Element {
+function FilmCard():JSX.Element {
   return (
     <section className="film-card">
       <div className="film-card__bg">
@@ -31,8 +31,7 @@ function WelcomeScreen():JSX.Element {
       <div className="film-card__wrap">
         <div className="film-card__info">
           <div className="film-card__poster">
-            <img src="img/the-grand-budapest-hotel-poster.jpg" alt="The Grand Budapest Hotel poster" width="218"
-                 height="327"/>
+            <img src="img/the-grand-budapest-hotel-poster.jpg" alt="The Grand Budapest Hotel poster" width="218" height="327"/>
           </div>
 
           <div className="film-card__desc">
@@ -63,4 +62,4 @@ function WelcomeScreen():JSX.Element {
   );
 }
 
-export default WelcomeScreen;
+export default FilmCard;
