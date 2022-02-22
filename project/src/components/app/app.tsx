@@ -2,7 +2,8 @@
 // import SignIn from '../signin/sign-in';
 // import Player from '../player/player';
 // import Mylist from '../mylist/mylist';
-import MainPage from '../main-page/main-page';
+import AddReview from '../add-review/add-review';
+// import MainPage from '../main-page/main-page';
 
 type AppProps = {
   title: string,
@@ -13,7 +14,8 @@ type AppProps = {
 
 function App({title, janre, year, numberOfCards}: AppProps):JSX.Element {
   return (
-    <MainPage title={title} janre={janre} year={year} numberOfCards={numberOfCards}/>
+    // <MainPage title={title} janre={janre} year={year} numberOfCards={numberOfCards}/>
+    <AddReview/>
   );
 }
 
