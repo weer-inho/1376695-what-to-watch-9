@@ -1,4 +1,10 @@
+import {useParams} from 'react-router-dom';
+
 function FilmCard():JSX.Element {
+  const params = useParams();
+  // eslint-disable-next-line no-console
+  console.log(params);
+
   return (
     <article className="small-film-card catalog__films-card">
       <div className="small-film-card__image">

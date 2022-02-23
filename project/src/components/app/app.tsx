@@ -28,9 +28,11 @@ function App({title, janre, year, numberOfCards}: AppProps):JSX.Element {
         </Route>
         <Route path={AppRoute.SignIn} element={<SignIn/>}></Route>
         <Route path={AppRoute.MyList} element={<Mylist/>}></Route>
-        <Route path={AppRoute.Film} element={<FilmCard/>}></Route>
+        <Route path={AppRoute.Film} element={<FilmCard />}></Route>
         <Route path={AppRoute.AddReview} element={<AddReview/>}></Route>
-        <Route path={AppRoute.Player} element={<Player/>}></Route>
+        <Route path={AppRoute.Player} element={<Player />}>
+          <Route path=':id' element={<Player />}></Route>
+        </Route>
         <Route
           path="*"
           element={
