@@ -1,11 +1,12 @@
-import {Route, BrowserRouter, Routes, Link} from 'react-router-dom';
-import {AppRoute} from '../../const';
+import {BrowserRouter, Link, Route, Routes} from 'react-router-dom';
+import PrivateRoute from '../private-route/private-route';
+import {AppRoute, AuthorizationStatus} from '../../const';
 import FilmCard from '../film-card/film-card';
 import SignIn from '../signin/sign-in';
 import Player from '../player/player';
-import Mylist from '../mylist/mylist';
 import AddReview from '../add-review/add-review';
 import MainPage from '../main-page/main-page';
+import MyList from '../mylist/mylist';
 
 type AppProps = {
   title: string,
@@ -27,7 +28,17 @@ function App({title, janre, year, numberOfCards}: AppProps):JSX.Element {
         >
         </Route>
         <Route path={AppRoute.SignIn} element={<SignIn/>}></Route>
-        <Route path={AppRoute.MyList} element={<Mylist/>}></Route>
+        <Route
+          path={AppRoute.MyList}
+          element={
+            <PrivateRoute
+              authorizationStatus={AuthorizationStatus.NoAuth}
+            >
+              <MyList />
+            </PrivateRoute>
+          }
+        >
+        </Route>
         <Route path={AppRoute.Film} element={<FilmCard />}></Route>
         <Route path={AppRoute.AddReview} element={<AddReview/>}></Route>
         <Route path={AppRoute.Player} element={<Player />}>
