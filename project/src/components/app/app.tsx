@@ -7,15 +7,17 @@ import Player from '../player/player';
 import AddReview from '../add-review/add-review';
 import MainPage from '../main-page/main-page';
 import MyList from '../mylist/mylist';
+import {FilmsType} from '../../types/films';
 
 type AppProps = {
   title: string,
   janre: string,
   year: number,
-  numberOfCards: number
+  numberOfCards: number,
+  films: FilmsType[],
 }
 
-function App({title, janre, year, numberOfCards}: AppProps):JSX.Element {
+function App({title, janre, year, numberOfCards, films}: AppProps):JSX.Element {
   return (
     //
     <BrowserRouter>

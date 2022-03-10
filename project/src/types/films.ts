@@ -9,10 +9,10 @@ export type FilmsType = {
     title: string
     genre: string,
     year: number,
-    preview_image: string,
+    previewImage: string,
     rating: number,
     director: string,
-    run_time: string,
+    runTime: string,
     description: string,
     actors: string[],
     reviews: reviewType[],
