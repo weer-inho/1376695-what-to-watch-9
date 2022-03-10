@@ -5,8 +5,7 @@ export type reviewType = {
   dateReview: string,
 }
 
-export type FilmsType = [
-  {
+export type FilmsType = {
     title: string
     genre: string,
     year: number,
@@ -17,5 +16,4 @@ export type FilmsType = [
     description: string,
     actors: string[],
     reviews: reviewType[],
-  },
-];
+};
