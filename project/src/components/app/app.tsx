@@ -34,9 +34,11 @@ function App({title, janre, year, numberOfCards, films}: AppProps):JSX.Element {
           path={AppRoute.MyList}
           element={
             <PrivateRoute
-              authorizationStatus={AuthorizationStatus.NoAuth}
+              authorizationStatus={AuthorizationStatus.Auth}
             >
-              <MyList />
+              <MyList
+                films={films}
+              />
             </PrivateRoute>
           }
         >
