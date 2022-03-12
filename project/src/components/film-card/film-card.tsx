@@ -2,13 +2,19 @@ import {FilmsType} from '../../types/films';
 
 type FilmCardProps = {
   film: FilmsType;
+  onActivated: () => void;
+  onDeactivated: () => void;
 }
 
 function FilmCard(props: FilmCardProps):JSX.Element {
-  const {film} = props;
+  const {film, onActivated, onDeactivated} = props;
 
   return (
-    <article className="small-film-card catalog__films-card">
+    <article
+      onMouseEnter={() => onActivated()}
+      onMouseLeave={() => onDeactivated()}
+      className="small-film-card catalog__films-card"
+    >
       <div className="small-film-card__image">
         <img src={film.previewImage} alt={film.title} width="280" height="175"/>
       </div>

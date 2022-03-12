@@ -6,7 +6,8 @@ export type reviewType = {
 }
 
 export type FilmsType = {
-    title: string
+    id: number,
+    title: string,
     genre: string,
     year: number,
     previewImage: string,

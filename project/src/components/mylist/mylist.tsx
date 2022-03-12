@@ -1,5 +1,6 @@
 import FilmCard from '../film-card/film-card';
 import {FilmsType} from '../../types/films';
+import {useState} from 'react';
 
 type MyListProps = {
   films: FilmsType[];
@@ -7,9 +8,9 @@ type MyListProps = {
 
 function MyList(props:MyListProps) :JSX.Element {
   const {films} = props;
+  const [, setFilmHoverId] = useState(undefined as number | undefined);
 
   return (
-
     <>
       <div className="visually-hidden">
         <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
@@ -68,26 +69,16 @@ function MyList(props:MyListProps) :JSX.Element {
           <h2 className="catalog__title visually-hidden">Catalog</h2>
 
           <div className="catalog__films-list">
-            {/*{*/}
-            {/*  films.map((film, id) => {*/}
-            {/*    const keyValue = `${id}-${film.year}`;*/}
-            {/*    return (*/}
-            {/*      <article key={keyValue} className="small-film-card catalog__films-card">*/}
-            {/*        <div className="small-film-card__image">*/}
-            {/*          <img src={film.previewImage} alt={film.title} width="280" height="175"/>*/}
-            {/*        </div>*/}
-            {/*        <h3 className="small-film-card__title">*/}
-            {/*          <a className="small-film-card__link" href="film-page.html">{film.title}</a>*/}
-            {/*        </h3>*/}
-            {/*      </article>*/}
-            {/*    );*/}
-            {/*  })*/}
-            {/*}*/}
 
-            {films.map((film, id) => {
-              const keyValue = `${id}-${film.previewImage}`;
+            {films.map((film) => {
+              const keyValue = film.id;
               return (
-                <FilmCard key={keyValue} film={film}/>
+                <FilmCard
+                  onActivated={() => setFilmHoverId(film.id)}
+                  onDeactivated={() => setFilmHoverId(undefined)}
+                  key={keyValue}
+                  film={film}
+                />
               );
             })}
 

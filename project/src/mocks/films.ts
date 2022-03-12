@@ -237,4 +237,4 @@ export const films: FilmsType[] = [
       },
     ],
   },
-];
+].map((item, id) => ({...item, id}));
