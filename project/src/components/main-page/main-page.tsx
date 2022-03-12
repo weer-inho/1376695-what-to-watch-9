@@ -1,5 +1,3 @@
-import FilmCard from '../film-card/film-card';
-
 type MainPageProps = {
   title: string,
   janre: string,
@@ -140,11 +138,6 @@ function MainPage({title, janre, year, numberOfCards}: MainPageProps):JSX.Elemen
           </ul>
 
           <div className="catalog__films-list">
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
           </div>
 
           <div className="catalog__more">

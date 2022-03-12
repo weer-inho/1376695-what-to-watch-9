@@ -1,7 +1,6 @@
 import {BrowserRouter, Link, Route, Routes} from 'react-router-dom';
 import PrivateRoute from '../private-route/private-route';
 import {AppRoute, AuthorizationStatus} from '../../const';
-import FilmCard from '../film-card/film-card';
 import SignIn from '../signin/sign-in';
 import Player from '../player/player';
 import AddReview from '../add-review/add-review';
@@ -43,7 +42,6 @@ function App({title, janre, year, numberOfCards, films}: AppProps):JSX.Element {
           }
         >
         </Route>
-        <Route path={AppRoute.Film} element={<FilmCard />}></Route>
         <Route path={AppRoute.AddReview} element={<AddReview/>}></Route>
         <Route path={AppRoute.Player} element={<Player />}>
           <Route path=':id' element={<Player />}></Route>
