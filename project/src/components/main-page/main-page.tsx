@@ -1,4 +1,6 @@
 import {FilmsType} from '../../types/films';
+import FilmCard from '../film-card/film-card';
+import {useState} from 'react';
 
 type MainPageProps = {
   title: string,
@@ -11,6 +13,9 @@ type MainPageProps = {
 function MainPage({title, janre, year, numberOfCards, films}: MainPageProps):JSX.Element {
   // eslint-disable-next-line no-console
   console.log(films);
+
+  const [, setFilmHoverId] = useState(undefined as number | undefined);
+
   return (
     <>
       <div className="visually-hidden">
@@ -143,6 +148,17 @@ function MainPage({title, janre, year, numberOfCards, films}: MainPageProps):JSX
           </ul>
 
           <div className="catalog__films-list">
+            {films.map((film) => {
+              const keyValue = film.id;
+              return (
+                <FilmCard
+                  onActivated={() => setFilmHoverId(film.id)}
+                  onDeactivated={() => setFilmHoverId(undefined)}
+                  key={keyValue}
+                  film={film}
+                />
+              );
+            })}
           </div>
 
           <div className="catalog__more">
