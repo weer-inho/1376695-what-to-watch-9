@@ -48,9 +48,18 @@ function App({title, janre, year, numberOfCards, films}: AppProps):JSX.Element {
           }
         >
         </Route>
-        <Route path={AppRoute.AddReview} element={<AddReview/>}></Route>
-        <Route path={AppRoute.Player} element={<Player />}>
-          <Route path=':id' element={<Player />}></Route>
+        <Route
+          path={AppRoute.AddReview}
+          element={<AddReview film={films[4]}/>}
+        >
+        </Route>
+        <Route
+          path={AppRoute.Player}
+          element={
+            <Player film={films[0]}/>
+          }
+        >
+          <Route path=':id' element={<Player film={films[0]}/>}></Route>
         </Route>
         <Route
           path="*"
