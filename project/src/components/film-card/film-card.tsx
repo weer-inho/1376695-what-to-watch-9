@@ -1,4 +1,5 @@
 import {FilmsType} from '../../types/films';
+import {Link} from 'react-router-dom';
 
 type FilmCardProps = {
   film: FilmsType;
@@ -19,7 +20,9 @@ function FilmCard(props: FilmCardProps):JSX.Element {
         <img src={film.previewImage} alt={film.title} width="280" height="175"/>
       </div>
       <h3 className="small-film-card__title">
-        <a className="small-film-card__link" href="film-page.html">{film.title}</a>
+        <Link to="/films/12/review">
+          <a className="small-film-card__link" href="film-page.html">{film.title}</a>
+        </Link>
       </h3>
     </article>
   );
