@@ -1,3 +1,4 @@
+import FormPostComment from '../form-post-comment/form-post-comment';
 import {useParams} from 'react-router-dom';
 import {FilmsType} from '../../types/films';
 
@@ -122,13 +123,7 @@ function AddReview(props: AddReviewProps) :JSX.Element {
               <label className='rating__label' htmlFor='star-1'>Rating 1</label>
             </div>
 
-            <div className='add-review__text'>
-              <textarea className='add-review__textarea' name='review-text' id='review-text' placeholder={film.description}></textarea>
-              <div className='add-review__submit'>
-                <button className='add-review__btn' type='submit'>Post</button>
-              </div>
-
-            </div>
+            <FormPostComment />
           </form>
         </div>
       </section>
