@@ -1,11 +1,16 @@
+import {FilmsType} from '../../types/films';
+
 type MainPageProps = {
   title: string,
   janre: string,
   year: number,
-  numberOfCards: number
+  numberOfCards: number,
+  films: FilmsType[]
 }
 
-function MainPage({title, janre, year, numberOfCards}: MainPageProps):JSX.Element {
+function MainPage({title, janre, year, numberOfCards, films}: MainPageProps):JSX.Element {
+  // eslint-disable-next-line no-console
+  console.log(films);
   return (
     <>
       <div className="visually-hidden">

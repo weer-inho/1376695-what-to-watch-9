@@ -24,7 +24,13 @@ function App({title, janre, year, numberOfCards, films}: AppProps):JSX.Element {
         <Route
           path={AppRoute.Main}
           element={
-            <MainPage title={title} janre={janre} year={year} numberOfCards={numberOfCards}/>
+            <MainPage
+              films={films}
+              title={title}
+              janre={janre}
+              year={year}
+              numberOfCards={numberOfCards}
+            />
           }
         >
         </Route>
