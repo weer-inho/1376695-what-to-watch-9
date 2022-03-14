@@ -21,7 +21,7 @@ function FilmCard(props: FilmCardProps):JSX.Element {
       </div>
       <h3 className="small-film-card__title">
         <Link to="/films/12/review">
-          <a className="small-film-card__link" href="film-page.html">{film.title}</a>
+          <a style={{color: 'white'}} className="small-film-card__link" href="film-page.html">{film.title}</a>
         </Link>
       </h3>
     </article>
