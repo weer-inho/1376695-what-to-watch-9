@@ -1,6 +1,11 @@
 import {useParams} from 'react-router-dom';
+import {FilmsType} from '../../types/films';
 
-function Player(): JSX.Element {
+type PlayerProps = {
+  film: FilmsType;
+}
+
+function Player(props: PlayerProps): JSX.Element {
   const params = useParams();
   // eslint-disable-next-line no-console
   console.log(params);
@@ -37,7 +42,7 @@ function Player(): JSX.Element {
       </div>
 
       <div className="player">
-        <video src="#" className="player__video" poster="img/player-poster.jpg"></video>
+        <video src="#" className="player__video" poster={props.film.previewImage}></video>
 
         <button type="button" className="player__exit">Exit</button>
 

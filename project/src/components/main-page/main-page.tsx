@@ -1,13 +1,18 @@
-import FilmCard from '../film-card/film-card';
+import {FilmsType} from '../../types/films';
+import MyList from '../mylist/mylist';
 
 type MainPageProps = {
   title: string,
   janre: string,
   year: number,
-  numberOfCards: number
+  numberOfCards: number,
+  films: FilmsType[]
 }
 
-function MainPage({title, janre, year, numberOfCards}: MainPageProps):JSX.Element {
+function MainPage({title, janre, year, numberOfCards, films}: MainPageProps):JSX.Element {
+  // eslint-disable-next-line no-console
+  console.log(films);
+
   return (
     <>
       <div className="visually-hidden">
@@ -139,13 +144,7 @@ function MainPage({title, janre, year, numberOfCards}: MainPageProps):JSX.Elemen
             </li>
           </ul>
 
-          <div className="catalog__films-list">
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-          </div>
+          <MyList films={films}/>
 
           <div className="catalog__more">
             <button className="catalog__button" type="button">Show more</button>

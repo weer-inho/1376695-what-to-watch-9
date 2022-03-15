@@ -1,21 +1,22 @@
 import {BrowserRouter, Link, Route, Routes} from 'react-router-dom';
 import PrivateRoute from '../private-route/private-route';
 import {AppRoute, AuthorizationStatus} from '../../const';
-import FilmCard from '../film-card/film-card';
 import SignIn from '../signin/sign-in';
 import Player from '../player/player';
 import AddReview from '../add-review/add-review';
 import MainPage from '../main-page/main-page';
 import MyList from '../mylist/mylist';
+import {FilmsType} from '../../types/films';
 
 type AppProps = {
   title: string,
   janre: string,
   year: number,
-  numberOfCards: number
+  numberOfCards: number,
+  films: FilmsType[],
 }
 
-function App({title, janre, year, numberOfCards}: AppProps):JSX.Element {
+function App({title, janre, year, numberOfCards, films}: AppProps):JSX.Element {
   return (
     //
     <BrowserRouter>
@@ -23,7 +24,13 @@ function App({title, janre, year, numberOfCards}: AppProps):JSX.Element {
         <Route
           path={AppRoute.Main}
           element={
-            <MainPage title={title} janre={janre} year={year} numberOfCards={numberOfCards}/>
+            <MainPage
+              films={films}
+              title={title}
+              janre={janre}
+              year={year}
+              numberOfCards={numberOfCards}
+            />
           }
         >
         </Route>
@@ -32,17 +39,27 @@ function App({title, janre, year, numberOfCards}: AppProps):JSX.Element {
           path={AppRoute.MyList}
           element={
             <PrivateRoute
-              authorizationStatus={AuthorizationStatus.NoAuth}
+              authorizationStatus={AuthorizationStatus.Auth}
             >
-              <MyList />
+              <MyList
+                films={films}
+              />
             </PrivateRoute>
           }
         >
         </Route>
-        <Route path={AppRoute.Film} element={<FilmCard />}></Route>
-        <Route path={AppRoute.AddReview} element={<AddReview/>}></Route>
-        <Route path={AppRoute.Player} element={<Player />}>
-          <Route path=':id' element={<Player />}></Route>
+        <Route
+          path={AppRoute.AddReview}
+          element={<AddReview film={films[4]}/>}
+        >
+        </Route>
+        <Route
+          path={AppRoute.Player}
+          element={
+            <Player film={films[0]}/>
+          }
+        >
+          <Route path=':id' element={<Player film={films[0]}/>}></Route>
         </Route>
         <Route
           path="*"

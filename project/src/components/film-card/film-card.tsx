@@ -1,17 +1,28 @@
-import {useParams} from 'react-router-dom';
+import {FilmsType} from '../../types/films';
+import {Link} from 'react-router-dom';
 
-function FilmCard():JSX.Element {
-  const params = useParams();
-  // eslint-disable-next-line no-console
-  console.log(params);
+type FilmCardProps = {
+  film: FilmsType;
+  onActivated: () => void;
+  onDeactivated: () => void;
+}
+
+function FilmCard(props: FilmCardProps):JSX.Element {
+  const {film, onActivated, onDeactivated} = props;
 
   return (
-    <article className="small-film-card catalog__films-card">
+    <article
+      onMouseEnter={() => onActivated()}
+      onMouseLeave={() => onDeactivated()}
+      className="small-film-card catalog__films-card"
+    >
       <div className="small-film-card__image">
-        <img src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg" alt="Fantastic Beasts: The Crimes of Grindelwald" width="280" height="175"/>
+        <img src={film.previewImage} alt={film.title} width="280" height="175"/>
       </div>
       <h3 className="small-film-card__title">
-        <a className="small-film-card__link" href="film-page.html">Fantastic Beasts: The Crimes of Grindelwald</a>
+        <Link to="/films/12/review">
+          <a style={{color: 'white'}} className="small-film-card__link" href="film-page.html">{film.title}</a>
+        </Link>
       </h3>
     </article>
   );
