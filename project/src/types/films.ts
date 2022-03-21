@@ -17,4 +17,5 @@ export type FilmsType = {
     description: string,
     actors: string[],
     reviews: reviewType[],
+    videoSrc: string,
 };
