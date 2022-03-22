@@ -1,12 +1,12 @@
-import {useState, useEffect, useRef} from 'react';
+import {useEffect, useRef} from 'react';
 
 type VideoPlayerProps = {
   src: string;
   posterSrc: string;
+  autoPlay: boolean;
 }
 
-function VideoPlayer({src, posterSrc}: VideoPlayerProps):JSX.Element {
-  const [isPlaying, setIsPlaying] = useState(false);
+function VideoPlayer({src, posterSrc, autoPlay}: VideoPlayerProps):JSX.Element {
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
   useEffect(() => {
@@ -14,16 +14,16 @@ function VideoPlayer({src, posterSrc}: VideoPlayerProps):JSX.Element {
       return;
     }
 
-    if (isPlaying) {
-      videoRef.current.play();
+    if (autoPlay) {
+      setTimeout(() => videoRef.current?.play(), 1000);
       return;
     }
 
-    videoRef.current.pause();
-  }, [isPlaying]);
+    videoRef.current.load();
+  }, [autoPlay]);
 
   return (
-    <video onMouseEnter={() => setIsPlaying(!isPlaying)} src={src} className={`player__video player__video--${isPlaying ? 'pause' : 'play'}`} poster={posterSrc} ref={videoRef}></video>
+    <video muted src={src} className='player__video' poster={posterSrc} ref={videoRef}></video>
   );
 }
 
