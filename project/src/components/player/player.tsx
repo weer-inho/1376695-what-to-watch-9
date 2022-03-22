@@ -1,4 +1,3 @@
-import {useParams} from 'react-router-dom';
 import {FilmsType} from '../../types/films';
 
 type PlayerProps = {
@@ -6,10 +5,6 @@ type PlayerProps = {
 }
 
 function Player(props: PlayerProps): JSX.Element {
-  const params = useParams();
-  // eslint-disable-next-line no-console
-  console.log(params);
-
   return (
     <>
       <div className="visually-hidden">

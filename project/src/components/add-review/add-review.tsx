@@ -9,8 +9,6 @@ type AddReviewProps = {
 function AddReview(props: AddReviewProps) :JSX.Element {
   const params = useParams();
   const {film} = props;
-  // eslint-disable-next-line no-console
-  console.log(params, film);
 
   return (
     <>

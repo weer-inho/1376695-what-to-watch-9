@@ -10,9 +10,7 @@ type MainPageProps = {
 }
 
 function MainPage({title, janre, year, numberOfCards, films}: MainPageProps):JSX.Element {
-  // eslint-disable-next-line no-console
-  console.log(films);
-
+  
   return (
     <>
       <div className="visually-hidden">
