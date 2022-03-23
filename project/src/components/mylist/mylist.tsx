@@ -8,7 +8,7 @@ type MyListProps = {
 
 function MyList(props:MyListProps) :JSX.Element {
   const {films} = props;
-  const [, setFilmHoverId] = useState(undefined as number | undefined);
+  const [filmHoveredId, setFilmHoverId] = useState(undefined as number | undefined);
 
   return (
     <body>
@@ -77,6 +77,7 @@ function MyList(props:MyListProps) :JSX.Element {
                   onDeactivated={() => setFilmHoverId(undefined)}
                   key={keyValue}
                   film={film}
+                  isActive={film.id === filmHoveredId}
                 />
               );
             })}

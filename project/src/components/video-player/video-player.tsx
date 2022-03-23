@@ -8,22 +8,28 @@ type VideoPlayerProps = {
 
 function VideoPlayer({src, posterSrc, autoPlay}: VideoPlayerProps):JSX.Element {
   const videoRef = useRef<HTMLVideoElement | null>(null);
-
   useEffect(() => {
-    if (videoRef.current === null) {
+    const video = videoRef.current;
+    if(video === null){
       return;
     }
 
-    if (autoPlay) {
-      setTimeout(() => videoRef.current?.play(), 1000);
+    if (!autoPlay) {
       return;
     }
 
-    videoRef.current.load();
-  }, [autoPlay]);
+    video.src = src;
+    video.muted=true;
+    video.autoplay = true;
+
+    return ()=>{
+      video.pause();
+      video.autoplay = false;
+      video.src = '';};
+  }, [autoPlay,src]);
 
   return (
-    <video muted src={src} className='player__video' poster={posterSrc} ref={videoRef}></video>
+    <video className='player__video' poster={posterSrc} ref={videoRef}/>
   );
 }
 
