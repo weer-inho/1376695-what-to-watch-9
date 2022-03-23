@@ -31,6 +31,7 @@ export const films: FilmsType[] = [
         dateReview: 'December 20, 2019',
       },
     ],
+    videoSrc: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm',
   },
   {
     title: 'Отель «Руанда»',
@@ -62,6 +63,7 @@ export const films: FilmsType[] = [
         dateReview: 'Febraury 6, 2008',
       },
     ],
+    videoSrc: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm',
   },
   {
     title: 'Далласский клуб покупателей',
@@ -93,6 +95,7 @@ export const films: FilmsType[] = [
         dateReview: '17 января 2014',
       },
     ],
+    videoSrc: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm',
   },
   {
     title: 'Дикая река',
@@ -124,6 +127,7 @@ export const films: FilmsType[] = [
         dateReview: '26 августа 2007',
       },
     ],
+    videoSrc: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm',
   },
   {
     title: 'Небесные ласточки',
@@ -149,6 +153,7 @@ export const films: FilmsType[] = [
         dateReview: '12 января 2020',
       },
     ],
+    videoSrc: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm',
   },
   {
     title: 'From Hell',
@@ -174,6 +179,7 @@ export const films: FilmsType[] = [
         dateReview: '15 декабря 2006',
       },
     ],
+    videoSrc: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm',
   },
   {
     title: 'Бедная Саша',
@@ -205,6 +211,7 @@ export const films: FilmsType[] = [
         dateReview: '24 ноября 2010',
       },
     ],
+    videoSrc: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm',
   },
   {
     title: 'Мимино',
@@ -236,5 +243,6 @@ export const films: FilmsType[] = [
         dateReview: '26 августа 20099',
       },
     ],
+    videoSrc: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm',
   },
 ].map((item, id) => ({...item, id}));
